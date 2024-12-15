@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# ws-server.php와 일치하는 프로세스의 PID를 찾아 역순으로 정렬
+PIDS=$(pgrep -f ws-server.php | tac)
+
+# 찾은 PID들을 하나씩 종료
+for PID in $PIDS; do
+    if [ ! -z "$PID" ]; then
+        echo "종료 중: $PID"
+        kill -9 $PID
+        # 종료 상태 회수를 위해 잠시 기다림
+        sleep 1
+    fi
+done

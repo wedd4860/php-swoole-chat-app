@@ -1,0 +1,10 @@
+.env
+.env.example
+/log
+/node_modules
+/.git
+/.fleet
+/.idea
+/.vscode
+.history
+framework/Socket/Repositories
